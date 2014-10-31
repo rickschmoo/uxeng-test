@@ -19,6 +19,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
     $scope.world = "Salesforce UXE";
 
+    /*var func = () => {
+      console.log('func!');
+    };
+
+    func();*/
+
   }
 
   appController.$inject = [
