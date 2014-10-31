@@ -1,0 +1,250 @@
+/*
+Copyright (c) 2014, salesforce.com, inc. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+Neither the name of salesforce.com, inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+.flag {
+  display: table;
+  width: 100%;
+}
+.flag--image,
+.flag--body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.flag--top .flag--image,
+.flag--top .flag--body {
+  vertical-align: top;
+}
+.flag--bottom .flag--image,
+.flag--bottom .flag--body {
+  vertical-align: bottom;
+}
+.flag--image > img {
+  display: block;
+  max-width: none;
+}
+.flag--image > span {
+  display: block;
+  max-width: none;
+}
+.flag--image > time {
+  display: block;
+  max-width: none;
+  white-space: nowrap;
+}
+.flag--rev .flag--image {
+  padding-right: 0;
+  padding-left: 10px;
+}
+.flag--body {
+  width: 100%;
+}
+
+.a-top {
+  vertical-align: top;
+}
+
+.a-mid {
+  vertical-align: middle;
+}
+
+.a-base {
+  vertical-align: baseline;
+}
+
+.a-btm {
+  vertical-align: bottom;
+}
+
+.grid {
+  display: block;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+}
+.grid--center {
+  text-align: center;
+}
+.grid-cell {
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  text-align: left;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-rendering: auto;
+}
+.grid-cell--center, .center {
+  display: block;
+  margin: 0 auto;
+}
+.size-1of12 {
+  width: 8.333%;
+}
+.size-1of10 {
+  width: 10%;
+}
+.size-1of8 {
+  width: 12.5%;
+}
+.size-1of7 {
+  width: 14.285714285714%;
+}
+.size-2of7 {
+  width: 28.571428571429%;
+}
+.size-3of7 {
+  width: 42.857142857143%;
+}
+.size-4of7 {
+  width: 57.142857142857%;
+}
+.size-5of7 {
+  width: 71.428571428571%;
+}
+.size-6of7 {
+  width: 85.714285714286%;
+}
+.size-1of6,
+.size-2of12 {
+  width: 16.667%;
+}
+.size-1of5,
+.size-2of10 {
+  width: 20%;
+}
+.size-1of4,
+.size-2of8,
+.size-3of12 {
+  width: 25%;
+}
+.size-3of10 {
+  width: 30%;
+}
+.size-1of3,
+.size-2of6,
+.size-3of9,
+.size-4of12 {
+  width: 33.333%;
+}
+.size-3of8 {
+  width: 37.5%;
+}
+.size-2of5,
+.size-4of10 {
+  width: 40%;
+}
+.size-5of12 {
+  width: 41.667%;
+}
+.size-1of2,
+.size-2of4,
+.size-3of6,
+.size-4of8,
+.size-5of10,
+.size-6of12 {
+  width: 50%;
+}
+.size-7of12 {
+  width: 58.333%;
+}
+.size-3of5,
+.size-6of10 {
+  width: 60%;
+}
+.size-5of8 {
+  width: 62.5%;
+}
+.size-2of3,
+.size-4of6,
+.size-8of12 {
+  width: 66.667%;
+}
+.size-7of10 {
+  width: 70%;
+}
+.size-3of4,
+.size-6of8,
+.size-9of12 {
+  width: 75%;
+}
+.size-4of5,
+.size-8of10 {
+  width: 80%;
+}
+.size-5of6,
+.size-10of12 {
+  width: 83.333%;
+}
+.size-7of8 {
+  width: 87.5%;
+}
+.size-9of10 {
+  width: 90%;
+}
+.size-11of12 {
+  width: 91.667%;
+}
+
+
+.sq-30 {
+  width: 30px;
+  height: 30px;
+}
+
+.sq-35 {
+  width: 35px;
+  height: 35px;
+}
+
+.ht-100p { height: 100%; }
+
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollable-x {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.text-truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.tl { text-align: left; }
+.tc { text-align: center; }
+.tr { text-align: right; }
+
+.z-1 { z-index: 1; }
+.z-2 { z-index: 2; }
+.z-3 { z-index: 3; }
+.z-4 { z-index: 4; }
+
+.clear:before,
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+.clear:after { clear: both; }

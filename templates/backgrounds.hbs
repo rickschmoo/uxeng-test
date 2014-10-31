@@ -1,0 +1,9 @@
+@import 'bgCustom';
+@import 'bgStandard';
+@import 'bgActions';
+
+{{#icons}}
+.bg-{{fileNameConvert fileName}}{
+	background-color: ${{fileNameConvert fileName}};
+}
+{{/icons}}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="cleartype" content="on">
+
+  <link href="css/main.css" rel="stylesheet" type="text/css">
+  <link href="css/spacings.css" rel="stylesheet" type="text/css">
+  <link href="css/icons.css" rel="stylesheet" type="text/css">
+
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/ng-templates.js"></script>
+</head>
+
+<body ng-controller="appController">
+
+  <section class="pam">
+    <span>Hello {{world}}</span>
+    <foo></foo>
+    <bar></bar>
+    <div class="mam icon--action-new-task action-icon"></div>
+    <div class="mam icon--contact standard-icon"></div>
+    <div class="mam icon--custom-1 standard-icon spin-ani"></div>
+  </section>
+
+  <img class="mam" src="assets/img/R&DUX_Logo.png" width="116" height="102">
+
+</body>
+</html>
