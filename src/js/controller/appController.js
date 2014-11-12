@@ -11,29 +11,87 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 */
 (function(){
 
-  var appController = function($rootScope, $scope, $element, appModel){
+  var appController = function($rootScope, $scope, $element, $http, appModel){
+    
     console.log('new appController');
+
+    /* $scope.blog = [
+    {
+        "author": "Luke Skywalker", 
+        "pubdatetime": "November 01, 2014 12:30:45AM", 
+        "body": "Wookie wookie wookie", 
+        "comments": [
+            {
+                "author": "Princess Leia",
+                "body": "May the force be with you"
+            },
+            {
+                "author": "Han Solo",
+                "body": "Look out, Luke"
+            }
+        ]
+    },
+    {
+        "author": "Wedge Antilles", 
+        "pubdatetime": "November 01, 2014 12:30:45AM", 
+        "body": "Wookie wookie wookie", 
+        "comments": [
+            {
+                "author": "Princess Leia",
+                "body": "May the force be with you"
+            },
+            {
+                "author": "Han Solo",
+                "body": "Look out, Luke"
+            }
+        ]
+    }]; */
+
+
+
+    // load blog data
+    console.log('loading blog data');
+    $http.get('data/blog.json')
+      .success(function(data) {
+        console.log('http.get worked AOK');
+        $scope.blog = data;
+        console.log($scope.blog);
+      })
+      .error(function(data) {
+        console.log("error");
+      });
+
 
     // make appModel available to all scopes
     $rootScope.appModel = appModel;
 
+    $scope.loggedinuser = {
+      'name': 'Wedge',
+      'image': 'wedge.jpg'
+    };
+
     $scope.world = "Salesforce UXE";
 
+    // console.log($scope.blog);
     /*var func = () => {
       console.log('func!');
     };
 
     func();*/
+    // console.log(blog);
 
-  }
+  };
+
 
   appController.$inject = [
     '$rootScope',
     '$scope',
     '$element',
+    '$http',
     'appModel'
   ];
 
   module.exports = appController;
 
 }).call(this);
+

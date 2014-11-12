@@ -24,6 +24,7 @@ var paths = {
   assets: "./assets",
   sass: "./src/scss/*.scss",
   generated: "./generated",
+  json: "./src/data",
   bower: "./bower_components",
   npm: "./node_modules",
   s1variables: "./node_modules/s1variables/variables",
@@ -42,6 +43,9 @@ gulp.task("init", function() {
   }
   if (!fs.existsSync(paths.output + "/js")) {
     fs.mkdirSync(paths.output + "/js");
+  }
+  if (!fs.existsSync(paths.output + "/data")) {
+    fs.mkdirSync(paths.output + "/data");
   }
 
   gulp.src(paths.bower + '/angular-route/angular-route.min.js.map').pipe(gulp.dest(paths.output + '/js'));
@@ -85,6 +89,11 @@ gulp.task("scripts:app", function() {
     }))
     .pipe(gulp.dest(paths.output + "/js"))
     .pipe(reload({stream:true}));
+});
+
+gulp.task("json", function() {
+  return gulp.src("./src/data/*.json")
+    .pipe(gulp.dest(paths.output + "/data"))
 });
 
 gulp.task("scripts:templates", function() {
@@ -202,6 +211,7 @@ gulp.task("watch", function() {
   gulp.watch(["./src/scss/*.scss", "./src/scss/**/*.scss"], ["styles"]);
   gulp.watch("./src/index.html", ["index"]);
   gulp.watch("./src/html/*.html", ["scripts:templates"]);
+  gulp.watch("./src/data/*.json", ["json"]);
   gulp.watch(["./src/js/*.js", "./src/js/**/*.js"], ["scripts:app"]);
 
   return gulp.watch("./assets/**", ["assets:app"]);
@@ -224,5 +234,5 @@ gulp.task("dev", ["browser-sync"], function() {
 });
 
 gulp.task("default", ["clean", "bower"], function() {
-  return gulp.start("init", "index", "variables", "styles", "assets:s1", "assets:app", "scripts:app", "scripts:vendor", "scripts:templates");
+  return gulp.start("init", "index", "variables", "styles", "assets:s1", "assets:app", "scripts:app", "scripts:vendor", "scripts:templates", "json");
 });
