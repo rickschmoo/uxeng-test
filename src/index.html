@@ -18,17 +18,8 @@
 
 <body ng-controller="appController">
 
-  <section class="pam">
-    <span>Hello {{world}}</span>
-    <foo></foo>
-    <bar></bar>
-    <div class="mam icon--action-new-task action-icon"></div>
-    <div class="mam icon--contact standard-icon"></div>
-    <div class="mam icon--custom-1 standard-icon spin-ani"></div>
-  </section>
   <section class="blog-section">
   <div class="blog-wrapper">
-
     <div class="blog-header">
       <div class="blog-title">
         <h3>Star Wars Blog</h3>
@@ -40,7 +31,9 @@
       </div>
     </div>
     <ul class="blog">
-      <li ng-repeat="blogpost in blog" class="blogpost">
+      <li ng-repeat="blogpost in blog" ng-controller="blogpostController" 
+          ng-mouseenter="activate()" ng-mouseleave="deactivate()" class="blogpost"
+          ng-class="{'inside' : isInside}">
 
         <div class="blogpost-container">
 
@@ -71,6 +64,7 @@
                     <div class="comment">
                       <div class="comment-author">
                         {{comment.author}}
+                        <img src="assets/img/{{comment.image}}"/>
                       </div> 
                       <div class="comment-time">
                         {{comment.pubdatetime}}
@@ -83,8 +77,9 @@
                 </ul>
                 <div class="commentpost-form">
                 <form>
-                  <input type="text" id="newcomment" name="newcomment" />
-                  <button>Post</button>
+                  <input type="text" ng-model="newcomment" id="newcomment" name="newcomment" \
+                          ng-class="{'inside' : isInside}"/>
+                  <button ng-click="submitCommentForm()" ng-disabled="newcomment == null">Post</button>
                 </form>
                 </div>
               </div>
@@ -99,6 +94,15 @@
   </div>
   </section>
 
+  <section class="pam">
+    <span>Hello {{world}}</span>
+    <foo></foo>
+    <bar></bar>
+    <div class="mam icon--action-new-task action-icon"></div>
+    <div class="mam icon--contact standard-icon"></div>
+    <div class="mam icon--custom-1 standard-icon spin-ani"></div>
+  </section>
+  
   <img class="mam" src="assets/img/R&DUX_Logo.png" width="116" height="102">
 
 </body>

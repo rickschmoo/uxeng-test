@@ -71,6 +71,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
   margin-bottom: 10px;
 }
 
+.blogpost.inside {
+  border: 1px solid black;
+}
+
 .blogpost-leftcol {
   display: block;
   float: left;
@@ -100,6 +104,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 .blogpost-comments {
   /* display: none; */
+  /* replaced by ng-show collapsed! */
 }
 
 .blogpost-comments-ul {
@@ -130,4 +135,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 .comment-body {
   margin-top: 10px;
+}
+
+.commentpost-form form input {
+  background-color: lightgrey;
+}
+
+.commentpost-form form input.inside {
+  background-color: white;
 }

@@ -17,7 +17,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
   // Controllers
   myApp.controller('appController', require('./controller/appController'));
-
+  myApp.controller('blogpostController', require('./controller/blogpostController'));
   // Models
   myApp.service('appModel', require('./model/appModel'));
 
